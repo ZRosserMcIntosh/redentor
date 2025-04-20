@@ -2,7 +2,7 @@
 
 import tkinter as tk
 from app.layout.header import create_header
-from app.layout.footer import create_footer
+from layout.footer import create_footer
 from app.views.sidebar import Sidebar
 from app.views.variable_input import VariableInputPanel
 from app.views.visualizer import VisualizerPanel
