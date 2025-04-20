@@ -27,6 +27,7 @@
     "next-intl": "^4.0.2",
     "prisma": "^6.6.0",
     "tsx": "^4.19.3",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vercel": "^41.6.1"
   }
 }
