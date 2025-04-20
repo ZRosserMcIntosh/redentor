@@ -1,0 +1,26 @@
+{
+    "modules": [
+      {
+        "id": "hilo_rut",
+        "name": "HiLo Activator - RUT",
+        "path": "modules/HILO_RUT",
+        "description": "Backtest the HiLo strategy on the RUT index using custom timeframes and DTEs.",
+        "tags": ["momentum", "backtest", "RUT", "technical analysis"]
+      },
+      {
+        "id": "spx_breadth",
+        "name": "SPX Breadth Analyzer",
+        "path": "modules/SPX_Breadth",
+        "description": "Analyze advance/decline breadth metrics for directional signals on SPX.",
+        "tags": ["breadth", "SPX", "market internals"]
+      },
+      {
+        "id": "vix_cross",
+        "name": "VIX Cross Strategy",
+        "path": "modules/VIX_Cross",
+        "description": "Backtest EMA/VIX crossover signals for market timing strategies.",
+        "tags": ["volatility", "VIX", "EMA", "signals"]
+      }
+    ]
+  }
+  
