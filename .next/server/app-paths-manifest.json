@@ -1,6 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/investor-console/page": "app/investor-console/page.js",
-  "/page": "app/page.js",
-  "/inquire/page": "app/inquire/page.js"
+  "/inquire/page": "app/inquire/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/page": "app/page.js"
 }
