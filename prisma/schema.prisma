@@ -21,24 +21,24 @@ enum ApplicationStatus {
 }
 
 model User {
-  id           String           @id @default(uuid())
-  fullName     String
-  preferredName String?
-  email        String           @unique
-  passwordHash String
-  role         Role
-  equityPercent  Float? 
-  createdAt    DateTime         @default(now())
-  updatedAt    DateTime         @updatedAt
-  permissions  UserPermission[]
-  capitalAccounts CapitalAccount[]
-  distributions  Distribution[]
-  closedClients   User[]      @relation("UserClosedClients")
-  closer          User?       @relation("UserClosedClients", fields: [closerId], references: [id])
-  closerId        String?
-  commissionRate  Float?       // Percentage commission the employee earns from performance fees
-  employeeCommissions Commission[] @relation("EmployeeCommissions")
-  clientCommissions   Commission[] @relation("ClientCommissions")
+  id                      String   @id @default(cuid())
+  email                   String   @unique
+  fullName                String
+  preferredName           String?    
+  passwordHash            String
+  role                    String
+  equityPercent           Float? 
+  createdAt               DateTime         @default(now())
+  updatedAt               DateTime         @updatedAt
+  permissions             UserPermission[]
+  capitalAccounts         CapitalAccount[]
+  distributions           Distribution[]
+  closedClients           User[]      @relation("UserClosedClients")
+  closer                  User?       @relation("UserClosedClients", fields: [closerId], references: [id])
+  closerId                String?
+  commissionRate          Float?       // Percentage commission the employee earns from performance fees
+  employeeCommissions     Commission[] @relation("EmployeeCommissions")
+  clientCommissions       Commission[] @relation("ClientCommissions")
 
   editable Boolean @default(false)
   preferredPaymentMethod String?

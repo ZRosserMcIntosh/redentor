@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+
 export default function Header() {
   return (
     <header
@@ -18,6 +19,7 @@ export default function Header() {
     >
       {/* Left: Logo */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.95rem' }}>
+        
         <img
           src="/boundless-logo.png"
           alt="Boundless Group Redentor Fund"
@@ -46,6 +48,9 @@ export default function Header() {
         </Link>
         <Link href="/api" style={{ textDecoration: 'none', color: '#333' }}>
           Account Settings
+        </Link>
+        <Link href="/sign-out" style={{ textDecoration: 'none', color: '#333' }}>
+          Sign Out
         </Link>
       </nav>
     </header>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import React from 'react';
 
 export default function Header() {
   return (
@@ -26,16 +27,22 @@ export default function Header() {
 
       {/* below: Navigation */}
       <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem' }}>
-      <Link href="/Quarterly Letters" style={{ textDecoration: 'none', color: '#333' }}>
-          Our Philosophy
+      <Link href="/investment-philosophy" style={{ textDecoration: 'none', color: '#333' }}>
+          Investment Philosophy
         </Link>
-        <Link href="/inquire" style={{ textDecoration: 'none', color: '#333' }}>
-          Interested Investors
-        </Link>
-        <Link href="/ourphilosophy" style={{ textDecoration: 'none', color: '#333' }}>
+      <Link href="/quantitative-models" style={{ textDecoration: 'none', color: '#333' }}>
           Quantitative Models
         </Link>
-        <Link href="/signin" style={{ textDecoration: 'none', color: '#333' }}>
+      <Link href="/future-products" style={{ textDecoration: 'none', color: '#333' }}>
+          Future Products
+        </Link>
+        <Link href="/inquire" style={{ textDecoration: 'none', color: '#333' }}>
+          Prospective Investors
+        </Link>
+        <Link href="/admin/dashboard" style={{ textDecoration: 'none', color: '#333' }}>
+          Employee Login
+        </Link>
+        <Link href="/client/dashboard" style={{ textDecoration: 'none', color: '#333' }}>
           Client Login
         </Link>
       </nav>
