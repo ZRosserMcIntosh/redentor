@@ -3,30 +3,30 @@
 import { useEffect, useState } from 'react';
 
 export default function InvestorConsole() {
-  const capitalInvestedUSD = 1250000;
-  const performanceMultiple = 2;
+  const capitalInvestedUSD = 100000.00;
+  const performanceMultiple = 2.35; // Mocked performance multiple
   const totalValueUSD = capitalInvestedUSD * performanceMultiple;
   const totalReturnUSD = totalValueUSD - capitalInvestedUSD;
   const annualReturn = 0.366; // Mocked annualized return
-  const fundAUM = 50000000;
+  const fundAUM = 1458720.00; // Mocked fund AUM
   const investorShare = (totalValueUSD / fundAUM) * 100;
 
   const [brlValue, setBrlValue] = useState<number | null>(null);
 
   useEffect(() => {
-    // Mock conversion rate: 1 USD = 5.05 BRL
-    const conversionRate = 5.05;
+    // Mock conversion rate: 1 USD = 5.85 BRL
+    const conversionRate = 5.85;
     setBrlValue(totalValueUSD * conversionRate);
   }, []);
 
   return (
     <div style={{ padding: '3rem 2rem', background: '#f9f9f9', minHeight: '100vh' }}>
       <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>
-        Investor Console <span style={{ fontSize: '1rem', fontWeight: 400, color: '#888' }}>(Demo)</span>
+        Welcome John <span style={{ fontSize: '1rem', fontWeight: 400, color: '#888' }}>(Demo)</span>
       </h1>
 
       <p style={{ marginBottom: '2rem', color: '#555' }}>
-        This is a demo preview of your personalized investor portal for the Redentor Fund. Real-time data, performance tracking, and fund-level insights will be available here.
+        This is a demo preview of your the investor terminal for the Redentor Fund. Real-time data, performance tracking, and fund-level insights will be available here.
       </p>
 
       {/* HERO ROW */}
@@ -99,10 +99,11 @@ export default function InvestorConsole() {
 
       {/* DOCUMENTS */}
       <section>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 600 }}>Investor Documents</h2>
+        
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 600 }}>Performance Documents</h2>
         <ul style={{ paddingLeft: '1rem' }}>
           <li><a href="/docs/q1-2025-report.pdf" target="_blank">Q1 2025 Performance Report</a></li>
-          <li><a href="/docs/k1-2024.pdf" target="_blank">2024 K-1 Tax Document</a></li>
+          <li><a href="/docs/k1-2024.pdf" target="_blank">2024 Form 1099</a></li>
         </ul>
       </section>
     </div>

@@ -10,27 +10,113 @@ datasource db {
 enum Role {
   client
   partner
-  employee
+  admin
+  employee  
+}
+
+enum ApplicationStatus {
+  pending
+  approved
+  rejected
 }
 
 model User {
   id           String           @id @default(uuid())
   fullName     String
+  preferredName String?
   email        String           @unique
   passwordHash String
   role         Role
+  equityPercent  Float? 
   createdAt    DateTime         @default(now())
   updatedAt    DateTime         @updatedAt
-  permissions  UserPermission[] // relation to permission join table
+  permissions  UserPermission[]
+  capitalAccounts CapitalAccount[]
+  distributions  Distribution[]
+  closedClients   User[]      @relation("UserClosedClients")
+  closer          User?       @relation("UserClosedClients", fields: [closerId], references: [id])
+  closerId        String?
+  commissionRate  Float?       // Percentage commission the employee earns from performance fees
+  employeeCommissions Commission[] @relation("EmployeeCommissions")
+  clientCommissions   Commission[] @relation("ClientCommissions")
+
+  editable Boolean @default(false)
+  preferredPaymentMethod String?
+  paymentInformation String?
 }
 
 model Permission {
   id          Int               @id @default(autoincrement())
   name        String            @unique
   description String?
-  users       UserPermission[]  // relation to user join table
+  users       UserPermission[]
 }
 
 model UserPermission {
   userId       String
   permissionId Int
+
+  user       User       @relation(fields: [userId], references: [id])
+  permission Permission @relation(fields: [permissionId], references: [id])
+
+  @@id([userId, permissionId])
+}
+
+model UserApplication {
+  id        String             @id @default(uuid())
+  fullName  String
+  email     String             @unique
+  message   String?
+  status    ApplicationStatus  @default(pending)
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+}
+
+model CapitalAccount {
+  id                  String   @id @default(uuid())
+  userId              String
+  user                User     @relation(fields: [userId], references: [id])
+  investedAt          DateTime
+  initialContribution Float
+  totalContributions  Float
+  totalRedemptions    Float
+  balance             Float
+}
+
+model MonthlyPerformance {
+  id                    String   @id @default(uuid())
+  month                 String   // Format: "YYYY-MM"
+  totalFundAUM          Float
+  realizedPL            Float
+  realizedPLPercent     Float
+  capitalContributions  Float
+  capitalRedemptions    Float
+  eomAUM                Float
+  performanceFees       Float
+  managementFees        Float
+  totalFees             Float
+  netAUM                Float
+  clientGainsNet        Float
+  clientGainsNetPercent Float
+}
+
+model Distribution {
+  id           String   @id @default(uuid())
+  month        String
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  capitalShare Float
+  profitShare  Float
+}
+
+model Commission {
+  id              String   @id @default(uuid())
+  month           String
+  employeeId      String
+  employee        User     @relation("EmployeeCommissions", fields: [employeeId], references: [id])
+  clientId        String
+  client          User     @relation("ClientCommissions", fields: [clientId], references: [id])
+  performanceFee  Float
+  commissionRate  Float    // e.g., 10.0 for 10%
+  commissionEarned Float
+}

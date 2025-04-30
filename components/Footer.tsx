@@ -22,10 +22,11 @@ export default function Footer() {
           <a href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</a>
           <a href="mailto:support@boundless.ai" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</a>
           <a href="/investor-console" style={{ textDecoration: 'none', color: 'inherit' }}>Investor Console Demo</a>
-          <a href="/create-account" style={{ textDecoration: 'none', color: 'inherit' }}>Create Account </a>
+          <a href="/apply" style={{ textDecoration: 'none', color: 'inherit' }}>Request Access </a>
 
         </div>
-        <p style={{ opacity: 0.7 }}>© {new Date().getFullYear()} Boundles Group LLC & Redentor Brasil LTDA. All rights reserved.</p>
+        <p style={{ opacity: 0.8 }}>© {new Date().getFullYear()} Redentor Capital Brasil LTDA. Todos os direitos reservados.</p>
+        <p style={{ opacity: 0.8 }}> Uma subsidiária da Boundles Group LLC. All rights reserved.</p>
       </footer>
     );
   }

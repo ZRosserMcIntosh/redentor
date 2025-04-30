@@ -21,19 +21,22 @@ export default function Header() {
           alt="Boundless Group Redentor Fund"
           style={{ height: '120px', objectFit: 'contain' }}
         />
-        <span style={{ fontSize: '1.25rem', fontWeight: 600 }}></span>
+        <span style={{ fontSize: '1.3rem', fontWeight: 600 }}></span>
       </div>
 
-      {/* Right: Navigation */}
+      {/* below: Navigation */}
       <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem' }}>
-      <Link href="/ourphilosophy" style={{ textDecoration: 'none', color: '#333' }}>
+      <Link href="/Quarterly Letters" style={{ textDecoration: 'none', color: '#333' }}>
           Our Philosophy
         </Link>
         <Link href="/inquire" style={{ textDecoration: 'none', color: '#333' }}>
-          Inquire
+          Interested Investors
+        </Link>
+        <Link href="/ourphilosophy" style={{ textDecoration: 'none', color: '#333' }}>
+          Quantitative Models
         </Link>
         <Link href="/signin" style={{ textDecoration: 'none', color: '#333' }}>
-          Sign In
+          Client Login
         </Link>
       </nav>
     </header>
