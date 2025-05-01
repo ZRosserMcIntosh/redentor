@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function Header() {
+export default function header() {
   return (
     <header
       style={{
