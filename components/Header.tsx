@@ -20,7 +20,7 @@ export default function Header() {
         <img
           src="/boundless-logo.png"
           alt="Boundless Group Redentor Fund"
-          style={{ height: '120px', objectFit: 'contain' }}
+          style={{ height: '130px', objectFit: 'contain' }}
         />
         <span style={{ fontSize: '1.3rem', fontWeight: 600 }}></span>
       </div>

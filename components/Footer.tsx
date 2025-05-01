@@ -20,7 +20,7 @@ export default function Footer() {
           <a href="/risk-disclosure" style={{ textDecoration: 'none', color: 'inherit' }}>Risk Disclosure</a>
           <a href="/careers" style={{ textDecoration: 'none', color: 'inherit' }}>Careers</a>
           <a href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</a>
-          <a href="mailto:support@boundless.ai" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</a>
+          <a href="mailto:boundlessgroup@proton.me" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</a>
           <a href="/investor-console" style={{ textDecoration: 'none', color: 'inherit' }}>Investor Console Demo</a>
           <a href="/apply" style={{ textDecoration: 'none', color: 'inherit' }}>Request Access </a>
 

@@ -11,7 +11,7 @@ from controllers.module_controller import ModuleController
 def launch_app():
     root = tk.Tk()
     root.title("Boundless Dashboard")
-    root.geometry("1920x1080")
+    root.geometry("2560x1440")
 
     # Controller handles module logic
     controller = ModuleController()
