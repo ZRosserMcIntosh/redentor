@@ -22,7 +22,7 @@ export default function footer() {
           <a href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</a>
           <a href="mailto:boundlessgroup@proton.me" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</a>
           <a href="/investor-console" style={{ textDecoration: 'none', color: 'inherit' }}>Investor Console Demo</a>
-          <a href="/apply" style={{ textDecoration: 'none', color: 'inherit' }}>Request Access </a>
+          <a href="/employeee-login" style={{ textDecoration: 'none', color: 'inherit' }}>Employee Login </a>
 
         </div>
         <p style={{ opacity: 0.8 }}>© {new Date().getFullYear()} Redentor Capital Brasil LTDA. Todos os direitos reservados.</p>

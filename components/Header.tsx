@@ -30,17 +30,11 @@ export default function header() {
       <Link href="/investment-philosophy" style={{ textDecoration: 'none', color: '#333' }}>
           Investment Philosophy
         </Link>
-      <Link href="/quantitative-models" style={{ textDecoration: 'none', color: '#333' }}>
-          Quantitative Models
-        </Link>
       <Link href="/future-products" style={{ textDecoration: 'none', color: '#333' }}>
           Future Products
         </Link>
         <Link href="/inquire" style={{ textDecoration: 'none', color: '#333' }}>
           Prospective Investors
-        </Link>
-        <Link href="/admin/dashboard" style={{ textDecoration: 'none', color: '#333' }}>
-          Employee Login
         </Link>
         <Link href="/client/dashboard" style={{ textDecoration: 'none', color: '#333' }}>
           Client Login
