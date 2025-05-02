@@ -3,7 +3,7 @@
 import { PrismaClient } from "@prisma/client";
 import { requireRole } from "@/lib/auth";
 import React from "react";
-import Header from "@/components/signed-in/header";
+import Header from "@/components/header2";
 import Footer from "@/components/footer";
 export default function AdminDashboard({ performances, clients, employees, commissions, partners }: any) {
   return (
