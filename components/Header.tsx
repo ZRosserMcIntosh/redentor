@@ -17,20 +17,22 @@ export default function header() {
     >
       {/* Left: Logo */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-        <img
-          src="/boundless-logo.png"
-          alt="Boundless Group Redentor Fund"
-          style={{ height: '130px', objectFit: 'contain' }}
-        />
+        <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/boundless-logo.png"
+            alt="Boundless Group Redentor Fund"
+            style={{ height: '130px', objectFit: 'contain', cursor: 'pointer' }}
+          />
+        </Link>
         <span style={{ fontSize: '1.3rem', fontWeight: 600 }}></span>
       </div>
 
-      {/* below: Navigation */}
+      {/* Navigation */}
       <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem' }}>
-      <Link href="/investment-philosophy" style={{ textDecoration: 'none', color: '#333' }}>
+        <Link href="/investment-philosophy" style={{ textDecoration: 'none', color: '#333' }}>
           Investment Philosophy
         </Link>
-      <Link href="/future-products" style={{ textDecoration: 'none', color: '#333' }}>
+        <Link href="/future-products" style={{ textDecoration: 'none', color: '#333' }}>
           Future Products
         </Link>
         <Link href="/inquire" style={{ textDecoration: 'none', color: '#333' }}>

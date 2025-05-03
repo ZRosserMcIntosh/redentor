@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 
 interface FormData {
   month: string;

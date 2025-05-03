@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { PrismaClient } from '@prisma/client';
 import React from "react";
-import Footer from "@/components/footer";
-import Header from "@/components/header2";
+import Footer from "../../components/footer";
+import Header from "../../components/signed-in/header";
 
 import { requireRole } from "@/lib/auth";
 import { getSession } from "next-auth/react";
