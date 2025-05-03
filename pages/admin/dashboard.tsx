@@ -3,8 +3,9 @@
 import { PrismaClient } from "@prisma/client";
 import { requireRole } from "@/lib/auth";
 import React from "react";
-import Header from '@/app/components/header';
-import Footer from '../../app/components/footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 export default function AdminDashboard({ performances, clients, employees, commissions, partners }: any) {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 text-gray-900 font-sans">
