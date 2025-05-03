@@ -1,7 +1,7 @@
 // pages/apply.tsx
 import { useState } from 'react';
 import React from "react";
-import Header from '../components/Header';
+import Header from '@/components/Header';
 
 export default function ApplyPage() {
   const [status, setStatus] = useState<'idle' | 'submitted' | 'error'>('idle');

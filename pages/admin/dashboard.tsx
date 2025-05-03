@@ -2,9 +2,10 @@
 
 import { PrismaClient } from "@prisma/client";
 import { requireRole } from "@/lib/auth";
+import { prisma } from '@/lib/prisma'
 import React from "react";
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function AdminDashboard({ performances, clients, employees, commissions, partners }: any) {
   return (
