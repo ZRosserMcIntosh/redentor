@@ -1,10 +1,53 @@
+import React from "react";
+import { GetServerSidePropsContext } from "next";
 import { PrismaClient } from "@prisma/client";
 import { requireRole } from "@/lib/auth";
 
-// Use a shared Prisma instance (better for serverless)
 const prisma = new PrismaClient();
 
-export async function getServerSideProps(context: any) {
+interface DashboardProps {
+  performances: any[];
+  clients: any[];
+  employees: any[];
+  commissions: any[];
+  partners: any[];
+}
+
+export default function AdminDashboard({
+  performances,
+  clients,
+  employees,
+  commissions,
+  partners,
+}: DashboardProps) {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold">Performances</h2>
+        <pre>{JSON.stringify(performances, null, 2)}</pre>
+      </section>
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold">Clients</h2>
+        <pre>{JSON.stringify(clients, null, 2)}</pre>
+      </section>
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold">Employees</h2>
+        <pre>{JSON.stringify(employees, null, 2)}</pre>
+      </section>
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold">Commissions</h2>
+        <pre>{JSON.stringify(commissions, null, 2)}</pre>
+      </section>
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold">Partners</h2>
+        <pre>{JSON.stringify(partners, null, 2)}</pre>
+      </section>
+    </div>
+  );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   try {
     const auth = await requireRole(context, ["admin", "partner"]);
     if ("redirect" in auth) return auth;
@@ -20,9 +63,7 @@ export async function getServerSideProps(context: any) {
 
     const employees = await prisma.user.findMany({
       where: { role: "employee" },
-      include: {
-        employeeCommissions: true,
-      },
+      include: { employeeCommissions: true },
     });
 
     const commissions = await prisma.commission.findMany({
